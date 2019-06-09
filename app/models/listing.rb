@@ -16,7 +16,6 @@ class Listing < ActiveRecord::Base
    end
 
    ratings.sum.to_f / ratings.size
-   end
   end
 
 
