@@ -9,6 +9,5 @@ class City < ActiveRecord::Base
    def city_openings(start_date, end_date)
     openings(start_date, end_date)
   end
-end
 
 end
