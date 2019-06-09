@@ -7,5 +7,18 @@ class Listing < ActiveRecord::Base
 
 
   validates_presence_of :address, :listing_type, :title, :description, :price, :neighborhood_id
+
+
+  def average_review
+    ratings = []
+      self.reservations.each do |res|
+      ratings << res.review.rating
+   end
+
+   ratings.sum.to_f / ratings.size
+ end
+  end
+
+
   
 end
