@@ -6,5 +6,6 @@ class Neighborhood < ActiveRecord::Base
   include Methods::InstanceMethods
   extend Methods::ClassMethods
 
-
+  def neighborhood_openings(start_date, end_date)
+   openings(start_date, end_date)
 end
