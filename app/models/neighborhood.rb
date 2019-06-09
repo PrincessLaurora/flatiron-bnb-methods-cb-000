@@ -8,4 +8,6 @@ class Neighborhood < ActiveRecord::Base
 
   def neighborhood_openings(start_date, end_date)
    openings(start_date, end_date)
-end
+ end
+
+end 
