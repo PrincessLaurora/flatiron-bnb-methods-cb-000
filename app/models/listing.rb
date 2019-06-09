@@ -30,5 +30,5 @@ class Listing < ActiveRecord::Base
       host.update(host: false)
     end
   end
-  end
+
 end
