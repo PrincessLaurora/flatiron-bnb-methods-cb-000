@@ -5,6 +5,9 @@ class Listing < ActiveRecord::Base
   has_many :reviews, :through => :reservations
   has_many :guests, :class_name => "User", :through => :reservations
 
+  before_create :change_user_status
+  before_destroy :clear_host_status
+
 
   validates_presence_of :address, :listing_type, :title, :description, :price, :neighborhood_id
 
@@ -18,6 +21,7 @@ class Listing < ActiveRecord::Base
    ratings.sum.to_f / ratings.size
   end
 
-
-
+  def change_user_status
+    self.host.update(host: true)
+  end
 end
