@@ -24,4 +24,11 @@ class Listing < ActiveRecord::Base
   def change_user_status
     self.host.update(host: true)
   end
+
+  def clear_host_status
+    if self.host.listings.count < 1
+      host.update(host: false)
+    end
+  end
+  end
 end
